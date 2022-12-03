@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { getProductDataRes } from '../../database/callAPI';
+import { getProductDataRes } from '../../context/callAPI';
 import * as S from './HomePage-style';
 import Card from '../../components/Card/Card';
 import LinkButton from '../../components/LinkButton/LinkButton';

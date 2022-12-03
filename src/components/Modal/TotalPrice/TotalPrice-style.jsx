@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const TotalPriceLayout = styled.div`
   display: flex;
   align-items: flex-end;
-  margin: 26px auto 26px;
+  margin: 26px 0 26px;
   font-size: 18px;
   line-height: 23px;
 `;
