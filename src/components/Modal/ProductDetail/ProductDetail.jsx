@@ -1,3 +1,4 @@
+import uuid from 'react-uuid';
 import * as S from './ProductDetail-style';
 
 export default function ProductDetail(productData) {
@@ -15,9 +16,9 @@ export default function ProductDetail(productData) {
           </tr>
         </tbody>
       </S.Table>
-      {productData.detailInfoImage.map((item, index) => (
+      {productData.detailInfoImage.map((item) => (
         <S.DetailInfoImg
-          key={index}
+          key={uuid()}
           src={` https://test.api.weniv.co.kr/${item}`}
         />
       ))}
