@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import uuid from 'react-uuid';
 import * as S from './Coupon-style';
 
 export default function Coupon({ couponData }) {
@@ -29,7 +28,7 @@ export default function Coupon({ couponData }) {
               쿠폰 선택
             </option>
             {couponData.map((item) => (
-              <option key={uuid()} value={item.couponName}>
+              <option key={item.id} value={item.couponName}>
                 {item.couponName}
               </option>
             ))}
@@ -40,7 +39,7 @@ export default function Coupon({ couponData }) {
       </S.CouponSelectBox>
       <div>
         {selectedCoupons.map((item) => (
-          <S.SelectedCoupon key={uuid()}>
+          <S.SelectedCoupon key={item.id}>
             <S.CouponName>{item}</S.CouponName>
             <S.DeleteButton onClick={handleBtnClick}></S.DeleteButton>
           </S.SelectedCoupon>
