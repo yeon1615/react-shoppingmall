@@ -1,22 +1,16 @@
 import React, { useState, useContext } from 'react';
-import { getProductDataRes } from '../../context/callAPI';
+import { getProductDataRes } from '../../api/api';
 import * as S from './HomePage-style';
 import Card from '../../components/Card/Card';
 import LinkButton from '../../components/LinkButton/LinkButton';
 
-export default function HomePage() {
-  const [loadedData, setLoadedData] = useState(null);
-
-  useContext(getProductDataRes).then((data) => {
-    setLoadedData(data);
-  });
-
+export default function HomePage({ productData }) {
   return (
     <S.MainPageLayout>
-      {loadedData !== null ? (
+      {productData !== null ? (
         <>
           <S.ProductList>
-            {loadedData.map((item) => (
+            {productData.map((item) => (
               <Card key={item.id} {...item} />
             ))}
           </S.ProductList>
